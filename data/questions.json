@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "List the names of all employees.",
+    "sql": "SELECT emp_name FROM employee;"
+  },
+  {
+    "id": 2,
+    "question": "What is the name and budget of each department?",
+    "sql": "SELECT dept_name, budget FROM department;"
+  },
+  {
+    "id": 3,
+    "question": "Find all employees who work in the Engineering department.",
+    "sql": "SELECT e.emp_name FROM employee e JOIN department d ON e.dept_id = d.dept_id WHERE d.dept_name = 'Engineering';"
+  },
+  {
+    "id": 4,
+    "question": "What is the average salary of employees in each department?",
+    "sql": "SELECT d.dept_name, AVG(e.salary) AS avg_salary FROM employee e JOIN department d ON e.dept_id = d.dept_id GROUP BY d.dept_name;"
+  },
+  {
+    "id": 5,
+    "question": "Who is the highest paid employee?",
+    "sql": "SELECT emp_name, salary FROM employee ORDER BY salary DESC LIMIT 1;"
+  }
+]
